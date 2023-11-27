@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Temporary setting color schemas */
+:root {
+  --tab: #2E2E3A;
+  --border: #2C2C37;
+  --text: #C6C6C6;
+  --text2: #616162;
+  --text3: #646cff;
+  --bg2: #2E2E3A;
+  --bg: #202029;
+  --red: #B02324;
+  --green: #00A372;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* FOLDER TREE CSS - OVERRIDE */
+.FolderTree .TreeNode {
+  padding: 6px 0;
+}
+.TreeNode {
+  font-size: 14px;
+}
+
+.TreeNode .iconContainer {
+  display: inline-block;
+}
+.FolderTree .EditableName .displayName:hover {
+  color: var(--text3);
+}
+.TreeNode .TreeNodeToolBar svg {
+  color: var(--text2);
+}
+.TreeNode .TreeNodeToolBar svg,
+.TreeNode .editingName
+, .TreeNode .EditableName
+, .TreeNode .EditableName input
+, .TreeNode .editableNameToolbar svg {
+  display: inline-block;
+}
