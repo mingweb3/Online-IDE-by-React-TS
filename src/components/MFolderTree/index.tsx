@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
-import FolderTree, { NodeData, testData } from "react-folder-tree";
+import FolderTree, { NodeData } from "react-folder-tree";
+import { folderTreeSample } from "@/constants/folderTreeSample";
+import { IEventTree } from "@/types/IEventTree";
 
 // STYLE
 const StyledFolderTree = styled.section`
@@ -8,23 +10,26 @@ const StyledFolderTree = styled.section`
 
 // COMP
 const MFolderTree = () => {
-  const sampleData = testData;
-  const onTreeStateChange = (state: NodeData, event: unknown) =>
-    console.log("NodeData", state);
-    console.log('event', event);
+  const sampleData = folderTreeSample;
+
+  const onTreeStateChange = (state: NodeData, event: unknown) => {
+   
+    const { type, path, params } = event as unknown as IEventTree;
+
+  console.log('last event: ', { type, path, params });
+  console.log("NodeData", state);
+  }
     
   const onChooseItem = ({defaultOnClick, nodeData }: { defaultOnClick: ()=> void, nodeData: NodeData }) => {
     defaultOnClick();
     console.log(nodeData);
   };
 
-  console.log(sampleData);
-
   return (
     <StyledFolderTree className="flex flex-col justify-between">
       <div className="p-3">
         <FolderTree
-          data={sampleData}
+          data={ sampleData }
           onChange={onTreeStateChange}
           onNameClick={onChooseItem}
           showCheckbox={false}

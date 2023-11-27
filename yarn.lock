@@ -2616,6 +2616,11 @@ use-tree-state@1.0.0:
   resolved "https://registry.yarnpkg.com/use-tree-state/-/use-tree-state-1.0.0.tgz#78e1e629b55faa33e9fef9ee409b383612ff429c"
   integrity sha512-MEHuUbZWGhekkFCboH0HKOhSHe5zm/l0C+GJdg0+vAuBr42VYmCTO9P2NfQMPU3Gkj7Zys93vtpl/fGReuOi5w==
 
+use-tree-state@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/use-tree-state/-/use-tree-state-1.1.1.tgz#229c0eb1019c382c446506b474f676ecfedd7b11"
+  integrity sha512-oNLnmUaAef97UGvw83L0tfTYj7ZBmPdf3tsaehr8FumSdq9Th/cc97jVTnSoOCoq9wYmhDuSffJxHv+wbgUlrA==
+
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
