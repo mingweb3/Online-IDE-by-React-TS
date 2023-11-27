@@ -7,14 +7,13 @@ const EditorContainer = () => {
   const editorRef = useRef(null);
   const fileData = files["script.js"];
 
-  const { height } = useWindowDimensions();
-
-
+  const { height, width } = useWindowDimensions();
 
   return (
     <div>
       <Editor
         height={height - 50}
+        width={width - 240}
         theme="vs-dark"
         path={fileData.name}
         defaultLanguage={fileData.language}

@@ -9,8 +9,10 @@
   --text: #C6C6C6;
   --text2: #616162;
   --text3: #646cff;
-  --bg2: #2E2E3A;
+  --black1e: #1e1e1e;
   --bg: #202029;
+  --bg2: #2E2E3A;
+  --bg3: #282837;
   --red: #B02324;
   --green: #00A372;
 }
@@ -94,6 +96,11 @@ button:focus-visible {
 
 .TreeNode .iconContainer {
   display: inline-block;
+}
+.FolderTree .EditableName .displayName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .FolderTree .EditableName .displayName:hover {
   color: var(--text3);

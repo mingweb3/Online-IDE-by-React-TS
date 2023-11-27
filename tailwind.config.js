@@ -24,7 +24,9 @@ export default withMT({
       text2: '#616162',
       text3: '#646cff',
       red: '#B02324',
-      green: '00A372',
+      green: '#00A372',
+      black1e: '#1e1e1e',
+      bg3: '#282837',
       bg2: '#2E2E3A',
       bg: '#202029'
     },
