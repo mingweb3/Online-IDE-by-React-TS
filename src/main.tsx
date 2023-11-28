@@ -5,11 +5,14 @@ import { ThemeProvider } from "@material-tailwind/react"; // https://www.materia
 
 import "react-folder-tree/dist/style.css";
 import "./index.css";
+import { IDETabsProvider } from "./contexts/TabsContext/index.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ThemeProvider>
     <HelmetProvider>
-      <App />
+      <IDETabsProvider>
+        <App />
+      </IDETabsProvider>
     </HelmetProvider>
   </ThemeProvider>
 );

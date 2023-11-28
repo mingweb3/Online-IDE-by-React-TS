@@ -4,6 +4,7 @@ import { folderTreeSample } from "@/constants/folderTreeSample";
 import { IEventTree } from "@/types/IEventTree";
 import { useEffect, useState } from "react";
 import BotLeftToolbar from "../BotLeftToolbar/BotLeftToolbar";
+import { useTabs } from "@/contexts/TabsContext";
 
 // STYLE
 const StyledFolderTree = styled.section`
@@ -17,10 +18,16 @@ const StyledFolderTree = styled.section`
 
 // COMP
 const MFolderTree = () => {
+
   const [treeS, setTreeS] = useState(folderTreeSample);
+  const { onAddTab } = useTabs();
+
 
   const onTreeStateChange = (state: NodeData, event: unknown) => {
     const { type, path, params } = event as unknown as IEventTree;
+    console.log("last event: ", { type, path, params });
+    console.log("NodeData", state);
+
 
     console.log("last event: ", { type, path, params });
     console.log("NodeData", state);
@@ -34,6 +41,7 @@ const MFolderTree = () => {
     nodeData: NodeData;
   }) => {
     defaultOnClick();
+    onAddTab(nodeData);
     console.log(nodeData);
   };
 
@@ -62,20 +70,20 @@ const MFolderTree = () => {
       <div className="inner flex flex-col justify-between">
         <div className="tree-view">
           <div className="p-3">
-            <div className="text-text2">
+            {/* <div className="text-text2">
               Please upload your project as ZIP first!
               <br />
               <br />
               <b>Click "Upload Project" below.</b>
               <br />
               <br />- Support .html, .js, .css, .jpg, .png
-            </div>
-            {/* <FolderTree
+            </div> */}
+            <FolderTree
               data={treeS}
               onChange={onTreeStateChange}
               onNameClick={onChooseItem}
               showCheckbox
-            /> */}
+            />
           </div>
         </div>
         <div className="toolbar-bottom  border-t-[1px] border-border border-solid">

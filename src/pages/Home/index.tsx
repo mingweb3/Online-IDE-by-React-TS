@@ -21,7 +21,7 @@ export const HomePage: React.FC = () => {
           <TopRightToolbar />
           <MFolderTree />
         </div>
-        <div className="right-side flex-grow">
+        <div className="flex-grow right-side">
           <FilesTab />
           <EditorContainer />
         </div>
