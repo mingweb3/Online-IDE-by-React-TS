@@ -4,7 +4,7 @@ import { folderTreeSample } from "@/constants/folderTreeSample";
 import { IEventTree } from "@/types/IEventTree";
 import { useEffect, useState } from "react";
 import BotLeftToolbar from "../BotLeftToolbar/BotLeftToolbar";
-import { useTabs } from "@/contexts/TabsContext";
+import { useIDETabs } from "@/contexts/AppContext";
 
 // STYLE
 const StyledFolderTree = styled.section`
@@ -20,7 +20,7 @@ const StyledFolderTree = styled.section`
 const MFolderTree = () => {
 
   const [treeS, setTreeS] = useState(folderTreeSample);
-  const { onAddTab } = useTabs();
+  const { onAddTab } = useIDETabs();
 
 
   const onTreeStateChange = (state: NodeData, event: unknown) => {
@@ -41,7 +41,9 @@ const MFolderTree = () => {
     nodeData: NodeData;
   }) => {
     defaultOnClick();
-    onAddTab(nodeData);
+    if (typeof nodeData.isOpen === "undefined") {
+      onAddTab(nodeData);
+    }
     console.log(nodeData);
   };
 
