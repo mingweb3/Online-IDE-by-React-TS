@@ -1,10 +1,10 @@
 import { NodeData } from "react-folder-tree";
 
-export interface IDETabsProviderProps {
+export interface AppProviderProps {
   children: React.ReactNode;
 }
 
-export interface IDETabsContextType {
+export interface AppContextType {
   tabs: IDETab[];
   onAddTab: (tab: IDETab) => void;
   onRemoveTab: (tab: IDETab) => void;

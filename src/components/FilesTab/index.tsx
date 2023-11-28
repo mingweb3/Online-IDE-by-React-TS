@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FileTabItem from "../FileTabItem/FileTabItem";
-import { IDETab, useTabs } from "@/contexts/IDETabsContext";
+import { IDETab, useIDETabs } from "@/contexts/AppContext";
 
 const TabWrapper = styled.div`
   max-width: calc(100vw - 240px);
@@ -9,7 +9,7 @@ const TabWrapper = styled.div`
 `;
 
 const FilesTab = () => {
-  const { tabs, onRemoveTab } = useTabs();
+  const { tabs, onRemoveTab } = useIDETabs();
   return (
     <section className=" bg-bg2">
       <TabWrapper className="px-2 flex flex-row gap-1 items-end h-[50px]">

@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import FolderTree, { NodeData } from "react-folder-tree";
 import { folderTreeSample } from "@/constants/folderTreeSample";
 import { IEventTree } from "@/types/IEventTree";
-import { useTabs } from "@/contexts/IDETabsContext";
+import { useIDETabs } from "@/contexts/AppContext";
 
 // STYLE
 const StyledFolderTree = styled.section`
@@ -11,7 +11,7 @@ const StyledFolderTree = styled.section`
 
 // COMP
 const MFolderTree = () => {
-  const { onAddTab } = useTabs();
+  const { onAddTab } = useIDETabs();
 
   const sampleData = folderTreeSample;
 
@@ -23,7 +23,9 @@ const MFolderTree = () => {
 
   const onChooseItem = ({ defaultOnClick, nodeData }: { defaultOnClick: () => void; nodeData: NodeData }) => {
     defaultOnClick();
-    onAddTab(nodeData);
+    if (typeof nodeData.isOpen === "undefined") {
+      onAddTab(nodeData);
+    }
     console.log(nodeData);
   };
 

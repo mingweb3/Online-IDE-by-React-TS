@@ -1,8 +1,8 @@
-import { TabType } from "@/contexts/TabsContext/types";
+import type { IDETab } from "@/contexts/AppContext";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 interface IFileTabItemProps {
-  tab: TabType;
+  tab: IDETab;
   onClose: () => void;
 }
 
