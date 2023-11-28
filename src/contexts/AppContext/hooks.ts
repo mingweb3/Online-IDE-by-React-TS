@@ -15,7 +15,8 @@ export const useIDETabs = (): {
   tabs: IDETab[];
   onAddTab: (tab: IDETab) => void;
   onRemoveTab: (tab: IDETab) => void;
+  onSelectTab: (tab: IDETab) => void;
 } => {
-  const { tabs, onAddTab, onRemoveTab } = useApp();
-  return { tabs, onAddTab, onRemoveTab };
+  const { tabs, onAddTab, onRemoveTab, onSelectTab } = useApp();
+  return { tabs, onAddTab, onRemoveTab, onSelectTab };
 };

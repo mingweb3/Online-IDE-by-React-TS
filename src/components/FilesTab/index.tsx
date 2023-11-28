@@ -9,12 +9,12 @@ const TabWrapper = styled.div`
 `;
 
 const FilesTab = () => {
-  const { tabs, onRemoveTab } = useIDETabs();
+  const { tabs, onRemoveTab, onSelectTab } = useIDETabs();
   return (
     <section className=" bg-bg2">
       <TabWrapper className="px-2 flex flex-row gap-1 items-end h-[50px]">
         {tabs.map((tab: IDETab) => (
-          <FileTabItem key={tab._id} tab={tab} onClose={() => onRemoveTab(tab)} />
+          <FileTabItem key={tab._id} tab={tab} onSelectTab={() => onSelectTab(tab)}  onClose={() => onRemoveTab(tab)} />
         ))}
       </TabWrapper>
     </section>
